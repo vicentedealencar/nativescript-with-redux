@@ -1,3 +1,12 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" >
-  <!-- UI Decalration -->
+<Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
+    <GridLayout rows="*, auto">
+        <ListView items="{{ photoItems }}" row="0">
+			<ListView.itemTemplate>                
+				<GridLayout>
+                	<Image imageSource="{{ itemImage }}" row="0"/>
+          		</GridLayout>               
+          </ListView.itemTemplate>
+        </ListView>
+        <Button row="1" text="{{message}}" tap="{{ tapAction }}" />
+    </GridLayout>
 </Page>

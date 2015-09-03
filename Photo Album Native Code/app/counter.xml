@@ -1,0 +1,6 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+	<GridLayout rows="auto, auto">
+        <Button row="0" text="{{count}}" tap="{{ decrement }}" />
+		<Button row="1" text="+" tap="{{ increment }}" />
+	</GridLayout>
+</Page>

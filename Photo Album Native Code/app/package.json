@@ -16,5 +16,8 @@
     ],
     "repository": {
         "url": "https://github.com/NativeScript/NativeScript/commit/ffc1fcb030cd77e8b630e0f3ef3cf3694e36be43"
+    },
+	"dependencies": {
+        "redux": "^2.0.0"
     }
 }
