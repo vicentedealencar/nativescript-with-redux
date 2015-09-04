@@ -1,8 +1,6 @@
 <Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
 	<StackLayout orientation="vertical">
-		<Label text="state" />
-    	<Label text="{{state}}" />
-        <Button text="-" tap="{{ decrement }}" />
-		<Button text="+" tap="{{ increment }}" />
+        <Button text="-" tap="decrement" />
+		<Button text="+" tap="increment" />
 	</StackLayout>
 </Page>

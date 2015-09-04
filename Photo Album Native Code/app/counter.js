@@ -15,14 +15,10 @@ model.set("state", redux.store.getState());
 
 redux.store.subscribe(function () {
     var state = redux.store.getState();
-    
+    dialogs.alert(state.toString())
 	model.set("state", state);
 });
 
-model.set('increment', function() {
-    redux.increment();
-});
+exports.increment = redux.increment;
 
-model.set('decrement', function() {
-    redux.decrement();
-});
+exports.decrement = redux.decrement;

@@ -29,7 +29,7 @@ exports.increment = function() {
     });
 }
 
-exports.increment = function() {
+exports.decrement = function() {
     store.dispatch({
         type: DECREMENT
     });
