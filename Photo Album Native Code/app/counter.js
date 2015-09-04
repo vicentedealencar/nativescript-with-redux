@@ -1,16 +1,28 @@
 var observable = require("data/observable");
 var redux = require("./redux-stuff");
+var dialogs = require("ui/dialogs");
 
-var counterModel = new observable.Observable();
+var model = new observable.Observable();
 
-Object.defineProperty(counterModel, "count", {
-    get: function () {
-        return redux.store.getState();
-    },
+function onPageLoaded(args) {
+  var page = args.object;
+  page.bindingContext = model;
+}
+
+exports.onPageLoaded = onPageLoaded;
+
+model.set("state", redux.store.getState());
+
+redux.store.subscribe(function () {
+    var state = redux.store.getState();
+    
+	model.set("state", state);
 });
 
-counterModel.increment = redux.increment;
+model.set('increment', function() {
+    redux.increment();
+});
 
-counterModel.decrement = redux.decrement;
-
-exports.counterModel = counterModel;
+model.set('decrement', function() {
+    redux.decrement();
+});

@@ -1,5 +1,5 @@
-var modelModule = require("./counter");
-var model = modelModule.counterModel;
+var modelModule = require("./view-model");
+var model = modelModule.photoAlbumModel;
 
 function onPageLoaded(args) {
   var page = args.object;
