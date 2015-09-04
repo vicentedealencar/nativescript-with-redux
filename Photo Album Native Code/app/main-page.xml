@@ -1,5 +1,5 @@
 <Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
-    <GridLayout rows="*, auto">
+    <GridLayout rows="*, auto, auto">
         <ListView items="{{ photoItems }}" row="0">
 			<ListView.itemTemplate>                
 				<GridLayout>
@@ -8,5 +8,6 @@
           </ListView.itemTemplate>
         </ListView>
         <Button row="1" text="{{message}}" tap="{{ tapAction }}" />
+        <Button row="2" text="take photo" tap="{{ takePhoto }}" />
     </GridLayout>
 </Page>

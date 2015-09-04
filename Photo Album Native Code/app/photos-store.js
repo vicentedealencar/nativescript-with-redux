@@ -1,5 +1,3 @@
-var imageSourceModule = require("image-source");
-var fileSystemModule = require("file-system");
 
 var redux = require("./node_modules/redux");
 
@@ -13,8 +11,7 @@ var reducer = function (state, action) {
 
 	switch (action.type) {
 		case PHOTO_ADDED:
-            var i = action.i;
-			return state.concat({itemImage: imageFromSource("0" + i + ".jpg")});
+			return state.concat({itemImage: action.picture});
 		default:
         	return state;
     }
@@ -24,10 +21,10 @@ var store = redux.createStore(reducer);
 
 exports.store = store;
 
-exports.photoAdded = function(i) {
+exports.photoAdded = function(picture) {
     store.dispatch({
 		type: PHOTO_ADDED,
-        i: i
+        picture: picture
 	});
 }
 
