@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "nativescript-maps": "^0.1.2",
-    "redux": "^2.0.0"
+    "redux": "^2.0.0",
+    "reduce-reducers": "^0.1.1"
   }
 }

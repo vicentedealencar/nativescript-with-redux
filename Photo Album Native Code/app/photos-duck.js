@@ -1,10 +1,7 @@
-
-var redux = require("./node_modules/redux");
-
 var PHOTO_ADDED = 'PHOTO_ADDED';
 
 var initialState = [];
-var reducer = function (state, action) {
+exports.reducer = function (state, action) {
     if (typeof state === 'undefined') {
     	state =  initialState;
 	}
@@ -15,20 +12,11 @@ var reducer = function (state, action) {
 		default:
         	return state;
     }
-}
-
-var store = redux.createStore(reducer);
-
-exports.store = store;
+};
 
 exports.photoAdded = function(picture) {
-    store.dispatch({
+    return {
 		type: PHOTO_ADDED,
         picture: picture
-	});
-}
-
-var directory = "/res/";
-function imageFromSource(imageName) {
-  return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));
+	};
 };

@@ -1,10 +1,8 @@
-var redux = require("./node_modules/redux");
-
 var INCREMENT = 'INCREMENT';
 var DECREMENT = 'DECREMENT';
 
 var initialState = 0;
-var reducer = function (state, action) {
+exports.reducer = function (state, action) {
     if (typeof state === 'undefined') {
     	state =  initialState;
 	}
@@ -19,18 +17,14 @@ var reducer = function (state, action) {
     }
 };
 
-var store = redux.createStore(reducer);
-
-exports.store = store;
-
 exports.increment = function() {
-    store.dispatch({
+    return {
         type: INCREMENT
-    });
+    };
 }
 
 exports.decrement = function() {
-    store.dispatch({
+    return {
         type: DECREMENT
-    });
+    };
 }
